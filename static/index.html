@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Segregation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shipping Email Segregation</h1>
+            <p class="subtitle">Automatically classify and extract shipping emails</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Paste Email</h2>
+                <textarea 
+                    id="emailInput" 
+                    placeholder="Paste your shipping email here..." 
+                    rows="10">
+                </textarea>
+                <button id="submitBtn" class="btn-submit">Extract & Classify</button>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Results</h2>
+                
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>Category</h3>
+                        <span id="categoryBadge" class="badge"></span>
+                    </div>
+                    <p id="categoryText" class="category-text"></p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3>Confidence</h3>
+                        <span id="confidenceText" class="confidence-score"></span>
+                    </div>
+                    <div id="confidenceBar" class="confidence-bar">
+                        <div id="confidenceFill" class="confidence-fill"></div>
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Extracted Data</h3>
+                    <div id="extractedData" class="extracted-data"></div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Raw JSON</h3>
+                    <pre id="jsonViewer" class="json-viewer"></pre>
+                </div>
+
+                <button id="resetBtn" class="btn-reset">Clear All</button>
+            </section>
+
+            <section id="errorSection" class="error-section" style="display: none;">
+                <p id="errorMessage" class="error-message"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Email Segregation MVP | Regex + Rule-Based Classification</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
